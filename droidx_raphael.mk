@@ -12,29 +12,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
+# Inherit from raphael device.
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common VoltageOS stuff.
-$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
+# Inherit some common DroidxUI stuff.
+$(call inherit-product, vendor/droidx/config/common.mk)
+TARGET_BOOT_ANIMATION_RES := 1080
+DROIDX_GAPPS := true
+TARGET_ENABLE_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := true
 
-# Official-ify
-VOLTAGE_BUILD_TYPE := OFFICIAL
-
-# UDFPS animations
-EXTRA_UDFPS_ANIMATIONS := true
-
-# Bootanimation Resolution
-TARGET_BOOT_ANIMATION_RES := 2160
+#DroidxUI Prop
+DROIDX_BUILDTYPE := OFFICIAL
+DROIDX_MAINTAINER := xdsolraC
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := voltage_raphael
+PRODUCT_NAME := droidx_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9T Pro
 PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="raphael"
-
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
