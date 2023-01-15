@@ -15,6 +15,9 @@
 # Inherit from raphael device.
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
+# ViPER4Android FX
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
+
 # Inherit some common DroidxUI stuff.
 $(call inherit-product, vendor/droidx/config/common.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
